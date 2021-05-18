@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nigel's Site</title>
     <style>
-        #welcome {
+
+        #greeting {
             display: none;
         }
     </style>
@@ -41,7 +42,7 @@
 
         </form>
 
-        <p id="welcome">
+        <p id="greeting">
             Welcome, <span id="fName"></span>! Feel free to explore.
         </p>
 
@@ -63,26 +64,8 @@
             const value = addForm.querySelector('input[type="text"]').value;
             console.log(value);
             document.getElementById("fName").innerHTML = value;
+            document.getElementById("greeting").style.display = "block";
         });
-
-        const addPara = document.querySelector['welcome'];
-
-        addPara.addEventListener('DOMContentLoaded', function(e) {
-            const x = document.getElementById("welcome");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-                console.log("working");
-            }
-        });
-
-        // const addPara = document.paragraphs['welcome'];
-
-        // addPara.addEventListener("DomContentLoaded", function(e){
-        //     if (addPara.style.display === "none") {
-        //         addPara.style.display = "block";
-        //         console.log("working");
-        //     }
-        // });
 
        
         
