@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigel's Site</title>
+    <style>
+        #welcome {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <Header>
+        
+        <div>
+            <nav>
+
+            </nav>
+        </div>
+
+    </Header>
+
+    <article>
+
+        <h1>
+            Welcome to Nigel's website!
+        </h1>
+
+        <p>
+            So you made it to my little corner of the web. 
+            I'm glad you're here, but since you've come all this way, why don't you tell me a little about yourself?
+        </p>
+
+        <form id="name">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName">
+            <input type="submit" value="Submit">
+
+        </form>
+
+        <p id="welcome">
+            Welcome, <span id="fName"></span>! Feel free to explore.
+        </p>
+
+    </article>
+
+    <footer>
+
+    </footer>
+</body>
+    <script>
+        window.addEventListener("DOMContentLoaded" , function(e) {
+            console.log("Page Loaded")
+        });
+
+        const addForm = document.forms['name'];
+        
+        addForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const value = addForm.querySelector('input[type="text"]').value;
+            console.log(value);
+            document.getElementById("fName").innerHTML = value;
+        });
+
+        const addPara = document.querySelector['welcome'];
+
+        addPara.addEventListener('DOMContentLoaded', function(e) {
+            const x = document.getElementById("welcome");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                console.log("working");
+            }
+        });
+
+        // const addPara = document.paragraphs['welcome'];
+
+        // addPara.addEventListener("DomContentLoaded", function(e){
+        //     if (addPara.style.display === "none") {
+        //         addPara.style.display = "block";
+        //         console.log("working");
+        //     }
+        // });
+
+       
+        
+               
+        
+    </script>
+</html>
