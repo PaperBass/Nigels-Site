@@ -11,6 +11,10 @@
         .hidden {
             display: none;
         }
+
+        .intro {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -25,29 +29,29 @@
     </Header>
 
     <main>
+        <div class="intro">
+            <h1>
+                Welcome to Nigel's website!
+            </h1>
 
-        <h1>
-            Welcome to Nigel's website!
-        </h1>
+            <p>
+                So you made it to my little corner of the web. 
+                I'm glad you're here, but since you've come all this way, why don't you tell me a little about yourself?
+            </p>
 
-        <p>
-            So you made it to my little corner of the web. 
-            I'm glad you're here, but since you've come all this way, why don't you tell me a little about yourself?
-        </p>
+            <form id="name">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName">
+                <input type="submit" value="Submit">
 
-        <form id="name">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName">
-            <input type="submit" value="Submit">
-
-        </form>
-
+            </form>
+        </div>
         <p class="hidden">
             Welcome, <span class="fName"></span>! Feel free to explore.
         </p>
 
         <article class="hidden">
-            <p></p>
+            <p>Take a look at my wares.</p>
 
         </article>
     
@@ -74,7 +78,6 @@
                         name[i].innerHTML = value;
                     }
                 }
-            // document.getElementsByClassName('fName').innerHTML = value;
             displayText();
                 function displayText() {
                     var texts = document.getElementsByClassName("hidden");
@@ -82,7 +85,13 @@
                         texts[i].style.display = "block";
                     }
                 }
-            // document.getElementsByClassName("hidden").style.display = "block";
+            hideIntro();
+            function hideIntro() {
+                    var intro = document.getElementsByClassName("intro");
+                    for (var i = 0; i < intro.length; i++) {
+                        intro[i].style.display = "none";
+                    }
+                }
         });
 
        
