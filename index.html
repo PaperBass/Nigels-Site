@@ -6,16 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nigel's Site</title>
-    <style>
-
-        .hidden {
-            display: none;
-        }
-
-        .intro {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <Header>
@@ -46,12 +37,12 @@
 
             </form>
         </div>
-        <p class="hidden">
+        <h2 class="hidden">
             Welcome, <span class="fName"></span>! Feel free to explore.
-        </p>
+        </h2>
 
         <article class="hidden">
-            <p>Take a look at my wares.</p>
+            
 
         </article>
     
@@ -59,44 +50,7 @@
     <footer>
 
     </footer>
+    <script src="apps.js"></script>
 </body>
-    <script>
-        window.addEventListener("DOMContentLoaded" , function(e) {
-            console.log("Page Loaded")
-        });
 
-        const addForm = document.forms['name'];
-        
-        addForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const value = addForm.querySelector('input[type="text"]').value;
-            console.log(value);
-            replaceName();
-                function replaceName() {
-                    var name = document.getElementsByClassName("fName");
-                    for (var i = 0; i < name.length; i++) {
-                        name[i].innerHTML = value;
-                    }
-                }
-            displayText();
-                function displayText() {
-                    var texts = document.getElementsByClassName("hidden");
-                    for (var i = 0; i < texts.length; i++) {
-                        texts[i].style.display = "block";
-                    }
-                }
-            hideIntro();
-            function hideIntro() {
-                    var intro = document.getElementsByClassName("intro");
-                    for (var i = 0; i < intro.length; i++) {
-                        intro[i].style.display = "none";
-                    }
-                }
-        });
-
-       
-        
-               
-        
-    </script>
 </html>

@@ -1,0 +1,9 @@
+.hidden {
+    display: none;
+    color: aquamarine;
+
+}
+
+.intro {
+    display: block;
+}
