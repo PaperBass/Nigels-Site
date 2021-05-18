@@ -8,7 +8,7 @@
     <title>Nigel's Site</title>
     <style>
 
-        #greeting {
+        .hidden {
             display: none;
         }
     </style>
@@ -24,7 +24,7 @@
 
     </Header>
 
-    <article>
+    <main>
 
         <h1>
             Welcome to Nigel's website!
@@ -42,12 +42,16 @@
 
         </form>
 
-        <p id="greeting">
-            Welcome, <span id="fName"></span>! Feel free to explore.
+        <p class="hidden">
+            Welcome, <span class="fName"></span>! Feel free to explore.
         </p>
 
-    </article>
+        <article class="hidden">
+            <p></p>
 
+        </article>
+    
+    </main>
     <footer>
 
     </footer>
@@ -63,8 +67,22 @@
             e.preventDefault();
             const value = addForm.querySelector('input[type="text"]').value;
             console.log(value);
-            document.getElementById("fName").innerHTML = value;
-            document.getElementById("greeting").style.display = "block";
+            replaceName();
+                function replaceName() {
+                    var name = document.getElementsByClassName("fName");
+                    for (var i = 0; i < name.length; i++) {
+                        name[i].innerHTML = value;
+                    }
+                }
+            // document.getElementsByClassName('fName').innerHTML = value;
+            displayText();
+                function displayText() {
+                    var texts = document.getElementsByClassName("hidden");
+                    for (var i = 0; i < texts.length; i++) {
+                        texts[i].style.display = "block";
+                    }
+                }
+            // document.getElementsByClassName("hidden").style.display = "block";
         });
 
        
