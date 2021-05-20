@@ -36,3 +36,18 @@ addForm.addEventListener('submit', function(e) {
      }
 
 });
+
+function insertValue() {
+    if (value === "") {
+        document.getElementsByClassName("errorMessage")[0].style.display = "block";
+    } else {
+        console.log(value);
+        replaceName();
+            function replaceName() {
+                var name = document.getElementsByClassName("fName");
+                for (var i = 0; i < name.length; i++) {
+                    name[i].innerHTML = value;
+                }
+            }
+        }
+};
