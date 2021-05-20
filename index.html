@@ -20,24 +20,30 @@
     </Header>
 
     <main>
-        <div class="intro">
+        <aside class="intro">
+
             <h1>
                 Welcome to Nigel's website!
             </h1>
 
             <p>
                 So you made it to my little corner of the web. 
+            </p>
+            
+            <p>
                 I'm glad you're here, but since you've come all this way, why don't you tell me a little about yourself?
             </p>
 
             <form id="name">
                 <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName">
+                <input type="text" id="inputName" name="firstName">
                 <input type="submit" value="Submit">
-
             </form>
-        </div>
-        <div class="errorMessage">Tell me who you are or get out!</div>
+
+            <div class="errorMessage">Tell me who you are or get out!</div>
+
+        </aside>
+
         <h2 id="welcomeMessage" class="hidden">
             Welcome, <span class="fName"></span>! Feel free to explore.
         </h2>

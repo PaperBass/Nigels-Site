@@ -17,4 +17,9 @@ article {
 
 .errorMessage {
     display: none;
+    color: red;
+}
+
+#inputName {
+    border-radius: 5px;
 }
