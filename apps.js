@@ -12,6 +12,13 @@ addForm.addEventListener('submit', function(e) {
         document.getElementsByClassName("errorMessage")[0].style.display = "block"
     } else {
         console.log(value);
+
+        const saveToLocalStorage = () => {
+            localStorage.setItem('nameInput', value)
+        }
+
+        saveToLocalStorage();
+
         replaceName();
             function replaceName() {
                 var name = document.getElementsByClassName("fName");
