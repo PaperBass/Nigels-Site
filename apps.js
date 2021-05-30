@@ -1,9 +1,13 @@
 
 window.addEventListener("DOMContentLoaded" , function(e) {
     console.log("Page Loaded")
+    
 });
 
+
+
 const addForm = document.forms['name'];
+
 
 addForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -19,11 +23,13 @@ addForm.addEventListener('submit', function(e) {
 
         saveToLocalStorage();
 
+        const storedInput = localStorage.getItem('nameInput');
+
         replaceName();
             function replaceName() {
-                var name = document.getElementsByClassName("fName");
+                let name = document.getElementsByClassName("spanName");
                 for (var i = 0; i < name.length; i++) {
-                    name[i].innerHTML = value;
+                    name[i].innerHTML = storedInput;
                 }
             }
         displayText();
@@ -33,6 +39,7 @@ addForm.addEventListener('submit', function(e) {
                     texts[i].style.display = "block";
                 }
             }
+
         hideIntro();
         function hideIntro() {
                 var intro = document.querySelectorAll(".intro,.errorMessage");
@@ -43,3 +50,5 @@ addForm.addEventListener('submit', function(e) {
      }
 
 });
+
+document.getElementsByClassName("spanName").innerHTML = localStorage.getItem("nameInput");
